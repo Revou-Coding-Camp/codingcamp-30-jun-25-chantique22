@@ -22,6 +22,7 @@
 <!-- BODY -->
 <body class="bg-gray-100 text-gray-800">
 
+
   <!-- Navbar -->
   <nav class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,14 +38,16 @@
           <a href="#contact" class="text-gray-700 hover:text-red-600 transition">Message Us</a>
         </div>
 
+
     <!-- Mobile Menu Button -->
-        <div class="md:hidden">
+  <div class="md:hidden">
           <button id="menu-btn" class="text-gray-700 focus:outline-none">
             ☰
           </button>
         </div>
       </div>
     </div>
+
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
@@ -56,31 +59,12 @@
     </div>
   </nav>
 
+
    <!-- Banner + Welcome -->
-  <section id="home" class="relative w-full">
+  <section id="home" class="relative w-full scroll-mt-20">
     <div id="welcome-message" class="text-center py-6 text-2xl font-semibold text-red-600"></div>
     <img src="asset/holland.png" alt="Holland Bakery Banner" class="w-full h-[300px] sm:h-[400px] object-cover" />
   </section>
-
-<!-- Welcome Speech JS -->
-<script>
-  const welcomeMessage = document.getElementById('welcome-message');
-  
-  const today = new Date();
-  const hour = today.getHours();
-  let greeting = "Welcome to Holland Bakery!";
-
-  if (hour < 12) {
-    greeting = "Good morning and welcome to Holland Bakery!";
-  } else if (hour < 18) {
-    greeting = "Good afternoon and welcome to Holland Bakery!";
-  } else {
-    greeting = "Good evening and welcome to Holland Bakery!";
-  }
-
-  welcomeMessage.textContent = greeting;
-</script>
-
 
 
   <!-- About -->
@@ -92,6 +76,7 @@
       <p class="text-lg leading-relaxed max-w-3xl mx-auto text-justify">Holland Bakery is one of the first pioneer in modern bakery business in Indonesia. Established in 1978, Holland Bakery is currently managed under PT. Mustika Citra Rasa. Our products are healthy, nutritious and affordable by everyone.</p>
     </div>
   </section>
+
 
   <!-- Vision & Mission -->
   <section id="vision" class="py-16 bg-gray-100 scroll-mt-20">
@@ -105,6 +90,7 @@
             To make Holland Bakery’s products a preferred staple food choice for the Indonesian people.
           </p>
         </div>
+
 
         <!-- Mission Card -->
         <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
@@ -133,18 +119,7 @@
             With MUI halal certification and commitment to quality, we are determined to continue to be the main choice of Indonesian people for bread and cake products.        </p>
       </div>
     </div>
-  </section>
-
- <!-- Script for mobile menu toggle -->
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
-  
+  </section> 
 
 
   <!-- Message Us Section -->
@@ -204,32 +179,9 @@
   </div>
 </section>
 
-<script>
-  const form = document.getElementById("message-form");
-  const tableBody = document.getElementById("message-table-body");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+<script src="js/script.js" defer></script>
 
-    const name = document.getElementById("name").value;
-    const dob = document.getElementById("dob").value;
-    const gender = document.querySelector("input[name='gender']:checked").value;
-    const message = document.getElementById("message").value;
-
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td class="border px-4 py-2">${name}</td>
-      <td class="border px-4 py-2">${dob}</td>
-      <td class="border px-4 py-2">${gender}</td>
-      <td class="border px-4 py-2">${message}</td>
-    `;
-
-    tableBody.appendChild(row);
-
-    // Clear form
-    form.reset();
-  });
-</script>
 
 </body>
 </html>
