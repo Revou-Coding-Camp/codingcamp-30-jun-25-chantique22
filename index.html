@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="asset/holland.png">
   <title>Holland Bakery</title>
 
   <!-- Bootstrap-->
@@ -29,12 +30,14 @@
           <span class="text-xl font-bold text-gray-800">Holland Bakery</span>
         </div>
         <div class="hidden md:flex space-x-6">
-          <a href="#home" class="text-gray-700 hover:text-red-600 transition">Home</a>
+          <a href="#welcome-message" class="text-gray-700 hover:text-red-600 transition">Home</a>
           <a href="#about" class="text-gray-700 hover:text-red-600 transition">About</a>
           <a href="#vision" class="text-gray-700 hover:text-red-600 transition">Vision & Mission</a>
           <a href="#profile" class="text-gray-700 hover:text-red-600 transition">Our Profile</a>
+          <a href="#contact" class="text-gray-700 hover:text-red-600 transition">Message Us</a>
         </div>
-        <!-- Mobile Menu Button -->
+
+    <!-- Mobile Menu Button -->
         <div class="md:hidden">
           <button id="menu-btn" class="text-gray-700 focus:outline-none">
             ☰
@@ -42,26 +45,48 @@
         </div>
       </div>
     </div>
+
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-      <a href="#home" class="block py-2 text-gray-700 hover:bg-gray-10">Home</a>
+      <a href="#welcome-message" class="block py-2 text-gray-700 hover:bg-gray-10">Home</a>
       <a href="#about" class="block py-2 text-gray-700 hover:text-red-600">About</a>
       <a href="#vision" class="block py-2 text-gray-700 hover:text-red-600">Visi & Misi</a>
       <a href="#profile" class="block py-2 text-gray-700 hover:text-red-600">Our Profile</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-red-600">Message Us</a>
     </div>
   </nav>
 
    <!-- Banner + Welcome -->
   <section id="home" class="relative w-full">
+    <div id="welcome-message" class="text-center py-6 text-2xl font-semibold text-red-600"></div>
     <img src="asset/holland.png" alt="Holland Bakery Banner" class="w-full h-[300px] sm:h-[400px] object-cover" />
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 text-center">
-    </div>
   </section>
 
+<!-- Welcome Speech JS -->
+<script>
+  const welcomeMessage = document.getElementById('welcome-message');
+  
+  const today = new Date();
+  const hour = today.getHours();
+  let greeting = "Welcome to Holland Bakery!";
+
+  if (hour < 12) {
+    greeting = "Good morning and welcome to Holland Bakery!";
+  } else if (hour < 18) {
+    greeting = "Good afternoon and welcome to Holland Bakery!";
+  } else {
+    greeting = "Good evening and welcome to Holland Bakery!";
+  }
+
+  welcomeMessage.textContent = greeting;
+</script>
+
+
+
   <!-- About -->
-<section id="about" class="py-12 bg-white scroll-mt-20">
-    <div class="container px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-danger">About Holland Bakery</h2>
+<  <section id="about" class="py-16 bg-white scroll-mt-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-red-600">About Holland Bakery</h2>
       <p class=" text-lg leading-relaxed max-w-3xl mx-auto text-justify">Holland Bakery is Indonesia leading bakery chains with 25 branches (Central Kitchen) that manage more than 470 outlets: Jabodetabek (Gajah Mada, Pondok Pinang, Jatinegara, Cikini, Sunter, Serpong, Ciputat, Pekayon, Bogor and Karawang), Bandung , Surabaya, Lampung, Batam, Pekanbaru, Makassar, Manado, Bali, Solo, Semarang, Balikpapan and Samarinda. We are still continuously expanding nationwide to other cities. </p>
       <br>
       <p class="text-lg leading-relaxed max-w-3xl mx-auto text-justify">Holland Bakery is one of the first pioneer in modern bakery business in Indonesia. Established in 1978, Holland Bakery is currently managed under PT. Mustika Citra Rasa. Our products are healthy, nutritious and affordable by everyone.</p>
@@ -69,39 +94,37 @@
   </section>
 
   <!-- Vision & Mission -->
-  <section id="vision" class="py-12 bg-gray-100">
-    <div class="container px-4">
-      <h2 class="text-3xl font-bold text-center mb-8 text-danger">Vision & Mission</h2>
-      <div class="row justify-center">
-        <div class="col-md-6 mb-4">
-          <div class="p-4 bg-white shadow rounded-lg h-100 group relative border-l-4 p-4 rounded-r-lg shadow-sm 
-              transform transition-all duration-300 hover:scale-105 ">
-            <h3 class="text-xl font-semibold mb-2">Vision</h3>
-            <p>
-             Our vision is to make Holland Bakery’s products a preferred staple food choice for Indonesian people.
-            </p>
-          </div>
+  <section id="vision" class="py-16 bg-gray-100 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10 text-red-600">Vision & Mission</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Vision Card -->
+        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Our Vision</h3>
+          <p class="text-gray-700">
+            To make Holland Bakery’s products a preferred staple food choice for the Indonesian people.
+          </p>
         </div>
-        <div class="col-md-6 mb-4">
-          <div class="p-4 bg-white shadow rounded-lg h-100 group relative border-l-4 p-4 rounded-r-lg shadow-sm 
-              transform transition-all duration-300 hover:scale-105 ">
-            <h3 class="text-xl font-semibold mb-2">Mission</h3>
-            <ul class="list-disc ps-4">
-              <li>Continuously develop high quality, nutritious and healthy products to adapt Indonesian taste.</li>
-              <li>Continuously open new stores to be accessible nationwide.</li>
-              <li>Continuously improve human resources quality by increasing welfare and competence to provide excellent service to customers.</li>
-            </ul>
-          </div>
+
+        <!-- Mission Card -->
+        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Our Mission</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-1">
+            <li>Develop high-quality, nutritious products suited to Indonesian tastes.</li>
+            <li>Expand our store network across the country.</li>
+            <li>Enhance employee welfare and service excellence.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
+
 <!-- Our Profile -->
-  <section id="profile" class="py-12 bg-white">
-    <div class="container px-4">
-      <h2 class="text-3xl font-bold mb-6 text-danger text-center">Our Profile</h2>
-      <div class="max-w-3xl mx-auto text-justify">
+   <section id="profile" class="py-16 bg-white scroll-mt-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center text-red-600">Our Profile</h2>
+      <div class="space-y-5 text-lg text-justify text-gray-700 leading-relaxed">
         <p class="text-lg leading-relaxed mb-4">
             Holland Bakery is a well-known bread brand in Indonesia with more than 40 years of experience. Founded in 1978, we have become a pioneer of modern bread and continue to grow in various major cities in Indonesia.        </p>
         <p class="text-lg leading-relaxed mb-4">
@@ -122,5 +145,91 @@
     });
   </script>
   
+
+
+  <!-- Message Us Section -->
+<section id="contact" class="py-16 bg-gray-100 scroll-mt-20"">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 text-red-600">Message Us</h2>
+    
+    <div class="grid md:grid-cols-2 gap-10">
+      
+      <!-- Form -->
+      <form id="message-form" class="bg-white shadow-md rounded-lg p-6 space-y-4">
+        <div>
+          <label for="name" class="block font-medium">Name</label>
+          <input type="text" id="name" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-red-500" />
+        </div>
+
+        <div>
+          <label for="dob" class="block font-medium">Date of Birth</label>
+          <input type="date" id="dob" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-red-500" />
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1">Gender</label>
+          <div class="space-x-4">
+            <label><input type="radio" name="gender" value="Male" required /> Male</label>
+            <label><input type="radio" name="gender" value="Female" required /> Female</label>
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block font-medium">Your Message</label>
+          <textarea id="message" rows="4" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-red-500"></textarea>
+        </div>
+
+        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded">
+          Submit
+        </button>
+      </form>
+
+      <!-- Table -->
+      <div class="overflow-auto">
+        <table class="min-w-full bg-white shadow-md rounded-lg">
+          <thead class="bg-red-600 text-white">
+            <tr>
+              <th class="px-4 py-2 text-left">Name</th>
+              <th class="px-4 py-2 text-left">DOB</th>
+              <th class="px-4 py-2 text-left">Gender</th>
+              <th class="px-4 py-2 text-left">Message</th>
+            </tr>
+          </thead>
+          <tbody id="message-table-body" class="text-gray-700">
+            <!-- Entries will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("message-form");
+  const tableBody = document.getElementById("message-table-body");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const dob = document.getElementById("dob").value;
+    const gender = document.querySelector("input[name='gender']:checked").value;
+    const message = document.getElementById("message").value;
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td class="border px-4 py-2">${name}</td>
+      <td class="border px-4 py-2">${dob}</td>
+      <td class="border px-4 py-2">${gender}</td>
+      <td class="border px-4 py-2">${message}</td>
+    `;
+
+    tableBody.appendChild(row);
+
+    // Clear form
+    form.reset();
+  });
+</script>
+
 </body>
 </html>
